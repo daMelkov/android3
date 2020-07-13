@@ -25,17 +25,20 @@
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="24dp"
+        android:background="@color/colorButton"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
         android:text="@string/save"
         app:layout_constraintEnd_toEndOf="@+id/editTextNumber"
         app:layout_constraintTop_toBottomOf="@+id/editTextNumber" />
 
     <EditText
         android:id="@+id/editTextNumber"
-        android:autofillHints=""
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="24dp"
+        android:autofillHints=""
         android:hint="@string/age"
         android:inputType="number"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -78,6 +81,24 @@
         android:text="@string/author"
         app:layout_constraintStart_toStartOf="@+id/textView"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="50"
+        android:text="@string/pressure"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="50"
+        android:text="@string/life_value"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

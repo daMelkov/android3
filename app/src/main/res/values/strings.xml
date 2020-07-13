@@ -6,5 +6,7 @@
     <string name="title">Комплексная система мониторинга здоровья</string>
     <string name="author">Мелков Д.А.</string>
     <string name="logo">Логотип</string>
+    <string name="pressure">Давление</string>
+    <string name="life_value">Жизненные показатели</string>
     <!--    <string name="title">Комплексная система</string>-->
 </resources>
