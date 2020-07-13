@@ -3,4 +3,8 @@
     <string name="fio">Фамилия Имя Отчество</string>
     <string name="age">Возраст</string>
     <string name="save">Сохранить</string>
+    <string name="title">Комплексная система мониторинга здоровья</string>
+    <string name="author">Мелков Д.А.</string>
+    <string name="logo">Логотип</string>
+    <!--    <string name="title">Комплексная система</string>-->
 </resources>
