@@ -1,5 +1,7 @@
 package ru.startandroid.develop.melkovhw3.data;
 
+import android.annotation.SuppressLint;
+
 public class Pressure {
     private int systolic;
     private int diastolic;
@@ -13,5 +15,12 @@ public class Pressure {
         this.pulse = pulse;
         this.tachycardia = tachycardia;
         this.date = date;
+    }
+
+    @SuppressLint("DefaultLocale")
+    @Override
+    public String toString() {
+        return String.format("Давление: %d/%d, пульс: %d, тахикардия: %s, дата проверки: %s",
+                systolic, diastolic, pulse, tachycardia, date);
     }
 }

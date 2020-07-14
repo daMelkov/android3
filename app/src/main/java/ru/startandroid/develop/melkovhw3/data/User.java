@@ -1,5 +1,7 @@
 package ru.startandroid.develop.melkovhw3.data;
 
+import android.annotation.SuppressLint;
+
 import java.util.ArrayList;
 import java.util.Collection;
 
@@ -19,7 +21,15 @@ public class User {
     }
 
     public User() {
+        this.name = "";
+        this.age = 0;
         this.pressures = new ArrayList<>();
         this.lifeValues = new ArrayList<>();
+    }
+
+    @SuppressLint("DefaultLocale")
+    @Override
+    public String toString() {
+        return String.format("name: %s, age: %d", name, age);
     }
 }

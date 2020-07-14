@@ -12,7 +12,7 @@ import android.widget.Toast;
 import ru.startandroid.develop.melkovhw3.data.LifeValues;
 
 public class LifeValuesActivity extends AppCompatActivity {
-    private final static String TAG = "LifeValuesActivity";
+    private final static String TAG = "TAG";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,7 +26,7 @@ public class LifeValuesActivity extends AppCompatActivity {
         final EditText edtStepCount = findViewById(R.id.edtStepCount);
 
         /* Save */
-        Button btnSave = findViewById(R.id.btnLifeValues);
+        Button btnSave = findViewById(R.id.btnSaveLifeValues);
         btnSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

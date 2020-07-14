@@ -13,7 +13,7 @@ import android.widget.Toast;
 import ru.startandroid.develop.melkovhw3.data.Pressure;
 
 public class PressureActivity extends AppCompatActivity {
-    private static final String TAG = "PressureActivity";
+    private static final String TAG = "TAG";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -1,5 +1,6 @@
 package ru.startandroid.develop.melkovhw3;
 
+import android.app.Application;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -13,7 +14,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import ru.startandroid.develop.melkovhw3.data.User;
 
 public class MainActivity extends AppCompatActivity {
-    private static final String TAG = "MainActivity";
+    private static final String TAG = "TAG";
     private User user;
 
     @Override

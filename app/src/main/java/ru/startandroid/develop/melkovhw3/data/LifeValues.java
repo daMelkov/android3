@@ -1,5 +1,7 @@
 package ru.startandroid.develop.melkovhw3.data;
 
+import android.annotation.SuppressLint;
+
 public class LifeValues {
     double weight;
     int stepCount;
@@ -7,5 +9,11 @@ public class LifeValues {
     public LifeValues(double weight, int stepCount) {
         this.weight = weight;
         this.stepCount = stepCount;
+    }
+
+    @SuppressLint("DefaultLocale")
+    @Override
+    public String toString() {
+        return String.format("Вес: %f, Количество шагов: %d", weight, stepCount);
     }
 }
