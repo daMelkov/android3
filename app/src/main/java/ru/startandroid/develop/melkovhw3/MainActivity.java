@@ -46,7 +46,8 @@ public class MainActivity extends AppCompatActivity {
         btnLifeValues.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ;
+                Intent intent = new Intent(MainActivity.this, LifeValuesActivity.class);
+                startActivity(intent);
             }
         });
     }
