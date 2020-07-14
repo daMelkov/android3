@@ -6,46 +6,6 @@
     android:padding="@dimen/activity_padding"
     android:background="@drawable/background">
 
-    <EditText
-        android:id="@+id/edtName"
-        android:autofillHints=""
-        android:layout_width="match_parent"
-        android:layout_height="45dp"
-        android:layout_marginTop="72dp"
-        android:hint="@string/fio"
-        android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.333"
-        app:layout_constraintStart_toStartOf="@+id/imgLogo"
-        app:layout_constraintTop_toBottomOf="@+id/imgLogo" />
-
-    <Button
-        android:id="@+id/btnMainSave"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:background="@color/colorButton"
-        android:paddingStart="16dp"
-        android:paddingEnd="16dp"
-        android:text="@string/save"
-        app:layout_constraintEnd_toEndOf="@+id/edtAge"
-        app:layout_constraintTop_toBottomOf="@+id/edtAge" />
-
-    <EditText
-        android:id="@+id/edtAge"
-        android:layout_width="match_parent"
-        android:layout_height="45dp"
-        android:layout_marginTop="24dp"
-        android:autofillHints=""
-        android:hint="@string/age"
-        android:inputType="number"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/edtName"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/edtName"
-        app:layout_constraintTop_toBottomOf="@+id/edtName"
-        app:layout_constraintVertical_bias="0.0" />
-
     <ImageView
         android:id="@+id/imgLogo"
         android:layout_width="64dp"
@@ -80,6 +40,43 @@
         android:text="@string/author"
         app:layout_constraintStart_toStartOf="@+id/textView"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <EditText
+        android:id="@+id/edtName"
+        android:autofillHints=""
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginTop="72dp"
+        android:hint="@string/fio"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.333"
+        app:layout_constraintStart_toStartOf="@+id/imgLogo"
+        app:layout_constraintTop_toBottomOf="@+id/imgLogo" />
+
+    <EditText
+        android:id="@+id/edtStepCount"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginTop="@dimen/widget_top_space"
+        android:autofillHints=""
+        android:hint="@string/age"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="@+id/edtName"
+        app:layout_constraintStart_toStartOf="@+id/edtName"
+        app:layout_constraintTop_toBottomOf="@+id/edtName" />
+
+    <Button
+        android:id="@+id/btnSave"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:background="@color/colorButton"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:text="@string/save"
+        app:layout_constraintEnd_toEndOf="@+id/edtStepCount"
+        app:layout_constraintTop_toBottomOf="@+id/edtStepCount" />
 
     <Button
         android:id="@+id/btnPressure"

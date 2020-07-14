@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -20,10 +19,10 @@ public class MainActivity extends AppCompatActivity {
         EditText edtName = findViewById(R.id.edtName);
 
         /* Age */
-        EditText edtAge = findViewById(R.id.edtAge);
+        EditText edtAge = findViewById(R.id.edtStepCount);
 
         /* Save */
-        Button btnSave = findViewById(R.id.btnMainSave);
+        Button btnSave = findViewById(R.id.btnSave);
         btnSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
