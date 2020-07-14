@@ -4,7 +4,111 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="24dp"
-    tools:context=".PressureActivity">
+    android:padding="24dp">
+
+    <ImageView
+        android:id="@+id/imgLogoPressure"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_marginTop="6dp"
+        android:background="@color/ic_flower_background"
+        android:contentDescription="@string/logo"
+        android:visibility="visible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_flower_layer" />
+
+    <TextView
+        android:id="@+id/txtTitlePressure"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:maxLines="5"
+        android:paddingTop="0dp"
+        android:text="@string/title"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imgLogoPressure"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txtAuthorPressure"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/author"
+        app:layout_constraintStart_toStartOf="@+id/txtTitlePressure"
+        app:layout_constraintTop_toBottomOf="@+id/txtTitlePressure" />
+
+    <EditText
+        android:id="@+id/edtSystolic"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginTop="72dp"
+        android:autofillHints=""
+        android:hint="@string/systolic"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/imgLogoPressure"
+        app:layout_constraintTop_toBottomOf="@+id/imgLogoPressure" />
+
+    <EditText
+        android:id="@+id/edtDiastolic"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginTop="24dp"
+        android:autofillHints=""
+        android:hint="@string/diastolic"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="@+id/edtSystolic"
+        app:layout_constraintStart_toStartOf="@+id/edtSystolic"
+        app:layout_constraintTop_toBottomOf="@+id/edtSystolic" />
+
+    <EditText
+        android:id="@+id/edtPulse"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginTop="24dp"
+        android:autofillHints=""
+        android:hint="@string/pulse"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="@+id/edtDiastolic"
+        app:layout_constraintStart_toStartOf="@+id/edtDiastolic"
+        app:layout_constraintTop_toBottomOf="@+id/edtDiastolic" />
+
+    <Switch
+        android:id="@+id/swTachycardia"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="@string/tachycardia"
+        app:layout_constraintStart_toStartOf="@+id/edtPulse"
+        app:layout_constraintTop_toBottomOf="@+id/edtPulse" />
+
+    <EditText
+        android:id="@+id/edtDatePressure"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:autofillHints=""
+        android:hint="@string/datetime"
+        android:inputType="datetime"
+        app:layout_constraintEnd_toEndOf="@+id/edtPulse"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/swTachycardia"
+        app:layout_constraintTop_toBottomOf="@+id/swTachycardia" />
+
+    <Button
+        android:id="@+id/btnSavePressure"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:background="@color/colorButton"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:text="@string/save"
+        app:layout_constraintEnd_toEndOf="@+id/edtDatePressure"
+        app:layout_constraintTop_toBottomOf="@+id/edtDatePressure" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

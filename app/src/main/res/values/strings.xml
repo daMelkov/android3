@@ -8,5 +8,10 @@
     <string name="logo">Логотип</string>
     <string name="pressure">Давление</string>
     <string name="life_value">Жизненные показатели</string>
+    <string name="systolic">Верхнее давление</string>
+    <string name="diastolic">Нижнее давление</string>
+    <string name="pulse">Пульс</string>
+    <string name="tachycardia">Тахикардия</string>
+    <string name="datetime">Дата замера</string>
     <!--    <string name="title">Комплексная система</string>-->
 </resources>
