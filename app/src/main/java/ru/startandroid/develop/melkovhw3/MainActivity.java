@@ -33,35 +33,34 @@ public class MainActivity extends AppCompatActivity {
         btnSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-                /* user name */
-                String name = edtName.getText().toString();
-                if(name.isEmpty()) {
-                    Toast.makeText(MainActivity.this, "Имя обязательно для заполнения!", Toast.LENGTH_SHORT).show();
-                    return;
-                }
-
-                /* age */
-                int age = -1;
-                try {
-                    age = Integer.parseInt(edtAge.getText().toString());
-                    if(age < 1 || age > 150) {
-                        Toast.makeText(MainActivity.this, "Возраст должен быть в диапазоне 0...150 лет!", Toast.LENGTH_SHORT).show();
+                    /* user name */
+                    String name = edtName.getText().toString();
+                    if (name.isEmpty()) {
+                        Toast.makeText(MainActivity.this, "Имя обязательно для заполнения!", Toast.LENGTH_SHORT).show();
                         return;
                     }
-                } catch (NumberFormatException e) {
-                    Toast.makeText(MainActivity.this, "Возраст должен быть числом!", Toast.LENGTH_SHORT).show();
-                    return;
-                }
 
-                /* user */
-                if(user == null) {
-                    user = new User();
-                }
-                user.setName(name);
-                user.setAge(age);
+                    /* age */
+                    int age = -1;
+                    try {
+                        age = Integer.parseInt(edtAge.getText().toString());
+                        if (age < 1 || age > 150) {
+                            Toast.makeText(MainActivity.this, "Возраст должен быть в диапазоне 0...150 лет!", Toast.LENGTH_SHORT).show();
+                            return;
+                        }
+                    } catch (NumberFormatException e) {
+                        Toast.makeText(MainActivity.this, "Возраст должен быть числом!", Toast.LENGTH_SHORT).show();
+                        return;
+                    }
 
-                Log.i(TAG, user.toString());
+                    /* user */
+                    if (user == null) {
+                        user = new User();
+                    }
+                    user.setName(name);
+                    user.setAge(age);
+
+                    Log.i(TAG, user.toString());
             }
         });
 

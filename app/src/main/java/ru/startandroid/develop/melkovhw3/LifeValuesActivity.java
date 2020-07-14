@@ -30,22 +30,26 @@ public class LifeValuesActivity extends AppCompatActivity {
         btnSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                /* weight */
-                double weight = Double.parseDouble(String.valueOf(edtWeight.getText()));
-                if(weight < 0 || weight > 300) {
-                    Toast.makeText(LifeValuesActivity.this, "Вес должен быть в пределах 0...300!", Toast.LENGTH_SHORT).show();
-                    return;
-                }
+                try {
+                    /* weight */
+                    double weight = Double.parseDouble(String.valueOf(edtWeight.getText()));
+                    if (weight < 0 || weight > 300) {
+                        Toast.makeText(LifeValuesActivity.this, "Вес должен быть в пределах 0...300!", Toast.LENGTH_SHORT).show();
+                        return;
+                    }
 
-                /* step count */
-                int stepCount = Integer.parseInt(String.valueOf(edtStepCount.getText()));
-                if(stepCount < 0) {
-                    Toast.makeText(LifeValuesActivity.this, "Количество шагов должно быть положительным!", Toast.LENGTH_SHORT).show();
-                    return;
-                }
+                    /* step count */
+                    int stepCount = Integer.parseInt(String.valueOf(edtStepCount.getText()));
+                    if (stepCount < 0) {
+                        Toast.makeText(LifeValuesActivity.this, "Количество шагов должно быть положительным!", Toast.LENGTH_SHORT).show();
+                        return;
+                    }
 
-                LifeValues values = new LifeValues(weight, stepCount);
-                Log.i(TAG, values.toString());
+                    LifeValues values = new LifeValues(weight, stepCount);
+                    Log.i(TAG, values.toString());
+                } catch (Exception e) {
+                    Toast.makeText(LifeValuesActivity.this, "Необходимо заполнить все поля!", Toast.LENGTH_SHORT).show();
+                }
             }
         });
     }
