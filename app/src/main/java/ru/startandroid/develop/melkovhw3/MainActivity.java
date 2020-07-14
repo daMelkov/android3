@@ -2,6 +2,7 @@ package ru.startandroid.develop.melkovhw3;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -12,6 +13,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import ru.startandroid.develop.melkovhw3.data.User;
 
 public class MainActivity extends AppCompatActivity {
+    private static final String TAG = "MainActivity";
     private User user;
 
     @Override
@@ -20,13 +22,13 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         /* Name */
-        final EditText edtName = findViewById(R.id.edtName);
+        final EditText edtName = findViewById(R.id.edtWeight);
 
         /* Age */
         final EditText edtAge = findViewById(R.id.edtStepCount);
 
         /* Save */
-        Button btnSave = findViewById(R.id.btnSave);
+        Button btnSave = findViewById(R.id.btnSaveLifeValues);
         btnSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -55,9 +57,10 @@ public class MainActivity extends AppCompatActivity {
                 if(user == null) {
                     user = new User();
                 }
-
                 user.setName(name);
                 user.setAge(age);
+
+                Log.i(TAG, user.toString());
             }
         });
 
@@ -66,6 +69,8 @@ public class MainActivity extends AppCompatActivity {
         btnPressure.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Log.i(TAG, "Button \"Pressure\" pushed!");
+
                 Intent intent = new Intent(MainActivity.this, PressureActivity.class);
                 startActivity(intent);
             }
@@ -76,6 +81,8 @@ public class MainActivity extends AppCompatActivity {
         btnLifeValues.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Log.i(TAG, "Button \"LifeValues\" pushed!");
+
                 Intent intent = new Intent(MainActivity.this, LifeValuesActivity.class);
                 startActivity(intent);
             }

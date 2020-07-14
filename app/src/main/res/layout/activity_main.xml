@@ -42,7 +42,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <EditText
-        android:id="@+id/edtName"
+        android:id="@+id/edtWeight"
         android:autofillHints=""
         android:layout_width="match_parent"
         android:layout_height="45dp"
@@ -62,12 +62,12 @@
         android:autofillHints=""
         android:hint="@string/age"
         android:inputType="number"
-        app:layout_constraintEnd_toEndOf="@+id/edtName"
-        app:layout_constraintStart_toStartOf="@+id/edtName"
-        app:layout_constraintTop_toBottomOf="@+id/edtName" />
+        app:layout_constraintEnd_toEndOf="@+id/edtWeight"
+        app:layout_constraintStart_toStartOf="@+id/edtWeight"
+        app:layout_constraintTop_toBottomOf="@+id/edtWeight" />
 
     <Button
-        android:id="@+id/btnSave"
+        android:id="@+id/btnSaveLifeValues"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"

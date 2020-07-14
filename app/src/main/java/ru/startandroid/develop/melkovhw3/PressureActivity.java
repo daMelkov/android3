@@ -3,6 +3,7 @@ package ru.startandroid.develop.melkovhw3;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -12,6 +13,7 @@ import android.widget.Toast;
 import ru.startandroid.develop.melkovhw3.data.Pressure;
 
 public class PressureActivity extends AppCompatActivity {
+    private static final String TAG = "PressureActivity";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,6 +63,7 @@ public class PressureActivity extends AppCompatActivity {
                 String date = String.valueOf(edtDate.getText());
 
                 Pressure pressure = new Pressure(systolic, diastolic, pulse, tachycardia, date);
+                Log.i(TAG, pressure.toString());
             }
         });
     }
