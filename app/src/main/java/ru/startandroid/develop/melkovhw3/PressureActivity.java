@@ -7,6 +7,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Switch;
+import android.widget.Toast;
+
+import ru.startandroid.develop.melkovhw3.data.Pressure;
 
 public class PressureActivity extends AppCompatActivity {
 
@@ -16,26 +19,48 @@ public class PressureActivity extends AppCompatActivity {
         setContentView(R.layout.activity_pressure);
 
         /* Systolic pressure */
-        EditText edtSystolic = findViewById(R.id.edtSystolic);
+        final EditText edtSystolic = findViewById(R.id.edtSystolic);
 
         /* Diastolic pressure */
-        EditText edtDiastolic = findViewById(R.id.edtDiastolic);
+        final EditText edtDiastolic = findViewById(R.id.edtDiastolic);
 
         /* Pulse */
-        EditText edtPulse = findViewById(R.id.edtPulse);
+        final EditText edtPulse = findViewById(R.id.edtPulse);
 
         /* Tachycardia */
-        Switch swTachycardia = findViewById(R.id.swTachycardia);
+        final Switch swTachycardia = findViewById(R.id.swTachycardia);
 
         /* Date */
-        EditText edtDate = findViewById(R.id.edtDatePressure);
+        final EditText edtDate = findViewById(R.id.edtDatePressure);
 
         /* Save */
         Button btnSave = findViewById(R.id.btnSavePressure);
         btnSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ;
+                int systolic = Integer.parseInt(String.valueOf(edtSystolic.getText()));
+                if(systolic < 50 || systolic > 200) {
+                    Toast.makeText(PressureActivity.this, "Верхнее давление должно быть в диапазоне 50...200!", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+                int diastolic = Integer.parseInt(String.valueOf(edtDiastolic.getText()));
+                if(diastolic < 50 || diastolic > 200) {
+                    Toast.makeText(PressureActivity.this, "Нижнее давление должно быть в диапазоне 50...200!", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+                int pulse = Integer.parseInt(String.valueOf(edtPulse.getText()));
+                if (pulse < 0 || pulse > 200) {
+                    Toast.makeText(PressureActivity.this, "Пульс должен быть в диапазоне 0...200!", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+                boolean tachycardia = swTachycardia.isChecked();
+
+                String date = String.valueOf(edtDate.getText());
+
+                Pressure pressure = new Pressure(systolic, diastolic, pulse, tachycardia, date);
             }
         });
     }
