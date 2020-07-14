@@ -7,5 +7,5 @@ public class Pressure {
     private int diastolic;
     private int pulse;
     private boolean tachycardia;
-    private LocalDateTime date;
+    private String date;
 }
