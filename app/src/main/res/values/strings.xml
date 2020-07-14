@@ -12,8 +12,9 @@
     <string name="diastolic">Нижнее давление</string>
     <string name="pulse">Пульс</string>
     <string name="tachycardia">Тахикардия</string>
-    <string name="datetime">Дата замера</string>
+    <string name="date">Дата замера</string>
     <string name="weight">Вес</string>
     <string name="step_count">Количество шагов</string>
+    <string name="time">Время замера</string>
     <!--    <string name="title">Комплексная система</string>-->
 </resources>

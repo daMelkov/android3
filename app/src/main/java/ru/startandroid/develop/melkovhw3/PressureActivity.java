@@ -2,15 +2,20 @@ package ru.startandroid.develop.melkovhw3;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.DatePickerDialog;
+import android.app.TimePickerDialog;
 import android.os.Bundle;
+import android.text.format.DateUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Switch;
+import android.widget.TimePicker;
 import android.widget.Toast;
 
-import java.security.spec.ECField;
+import java.util.Calendar;
 
 import ru.startandroid.develop.melkovhw3.data.Pressure;
 
@@ -35,7 +40,56 @@ public class PressureActivity extends AppCompatActivity {
         final Switch swTachycardia = findViewById(R.id.swTachycardia);
 
         /* Date */
-        final EditText edtDate = findViewById(R.id.edtDatePressure);
+        final Calendar calendar = Calendar.getInstance();
+        final Button edtDate = findViewById(R.id.btnDatePressure);
+        edtDate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                new DatePickerDialog(PressureActivity.this, mDateSetListener,
+                        calendar.get(Calendar.YEAR),
+                        calendar.get(Calendar.MONTH),
+                        calendar.get(Calendar.DAY_OF_MONTH))
+                        .show();
+            }
+
+            DatePickerDialog.OnDateSetListener mDateSetListener = new DatePickerDialog.OnDateSetListener() {
+                public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
+                    calendar.set(Calendar.YEAR, year);
+                    calendar.set(Calendar.MONTH, monthOfYear);
+                    calendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);
+
+                    edtDate.setText(DateUtils.formatDateTime(
+                            PressureActivity.this,
+                            calendar.getTimeInMillis(),
+                            DateUtils.FORMAT_SHOW_DATE  | DateUtils.FORMAT_SHOW_YEAR)
+                    );
+                }
+            };
+        });
+
+        /* Time */
+        final Button edtTime = findViewById(R.id.btnTimePressure);
+        edtTime.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                new TimePickerDialog(PressureActivity.this, mTimeSetListener,
+                        calendar.get(Calendar.HOUR_OF_DAY),
+                        calendar.get(Calendar.MINUTE), true)
+                        .show();
+            }
+
+            TimePickerDialog.OnTimeSetListener mTimeSetListener = new TimePickerDialog.OnTimeSetListener() {
+                public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
+                    calendar.set(Calendar.HOUR_OF_DAY, hourOfDay);
+                    calendar.set(Calendar.MINUTE, minute);
+
+                    edtTime.setText(DateUtils.formatDateTime(
+                            PressureActivity.this,
+                            calendar.getTimeInMillis(),
+                            DateUtils.FORMAT_SHOW_TIME));
+                }
+            };
+        });
 
         /* Save */
         Button btnSave = findViewById(R.id.btnSavePressure);
@@ -63,7 +117,7 @@ public class PressureActivity extends AppCompatActivity {
 
                     boolean tachycardia = swTachycardia.isChecked();
 
-                    String date = String.valueOf(edtDate.getText());
+                    String date = String.valueOf(edtDate.getText()) + " " + String.valueOf(edtTime.getText());
 
                     Pressure pressure = new Pressure(systolic, diastolic, pulse, tachycardia, date);
                     Log.i(TAG, pressure.toString());

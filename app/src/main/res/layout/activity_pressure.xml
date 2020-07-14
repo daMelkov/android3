@@ -87,16 +87,27 @@
         app:layout_constraintStart_toStartOf="@+id/edtPulse"
         app:layout_constraintTop_toBottomOf="@+id/edtPulse" />
 
-    <EditText
-        android:id="@+id/edtDatePressure"
-        android:layout_width="match_parent"
+    <Button
+        android:id="@+id/btnDatePressure"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/widget_top_space"
+        android:layout_weight="50"
         android:autofillHints=""
-        android:hint="@string/datetime"
-        android:inputType="datetime"
-        app:layout_constraintEnd_toEndOf="@+id/edtPulse"
+        android:hint="@string/date"
         app:layout_constraintStart_toStartOf="@+id/swTachycardia"
+        app:layout_constraintTop_toBottomOf="@+id/swTachycardia" />
+
+    <Button
+        android:id="@+id/btnTimePressure"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="@dimen/widget_top_space"
+        android:layout_weight="50"
+        android:autofillHints=""
+        android:hint="@string/time"
+        app:layout_constraintStart_toEndOf="@+id/btnDatePressure"
         app:layout_constraintTop_toBottomOf="@+id/swTachycardia" />
 
     <Button
@@ -108,7 +119,7 @@
         android:paddingStart="16dp"
         android:paddingEnd="16dp"
         android:text="@string/save"
-        app:layout_constraintEnd_toEndOf="@+id/edtDatePressure"
-        app:layout_constraintTop_toBottomOf="@+id/edtDatePressure" />
+        app:layout_constraintEnd_toEndOf="@+id/edtPulse"
+        app:layout_constraintTop_toBottomOf="@+id/btnDatePressure" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
